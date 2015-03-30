@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Ellie – a psychotherapise Slackbot, based on Eliza">
+    <meta name="author" content="Christina Cacioppo">
+
+    <title>Ellie – a psychotherapise Slackbot</title>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href="http://vjs.zencdn.net/4.8/video-js.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>Ellie</h1>
+        <h3>A psychotherapist Slackbot who'll always listen to you</h3>
+        <a href="https://github.com/christinac/ellie-slack" class="btn btn-download">Download</a>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+	    <div class="video-container">
+			<video id="video_ellie" class="video-js vjs-default-skin"
+			    autobuffer preload="true" height="588" width="1000">
+			  	<source src="ellie.mp4" type='video/mp4' />
+			</video>
+		</div>
+
+	    <iframe src="https://ghbtns.com/github-btn.html?user=christinac&repo=ellie-slack&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+	    <iframe src="https://ghbtns.com/github-btn.html?user=christinac&repo=ellie-slack&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <small><a href="http://christinacacioppo.com">Christina Cacioppo</a>
+        <span class="pull-right text-muted">Not at all (not even a little) endorsed by Slack. Just uses their API!</span></small>
+      </div>
+    </footer>
+
+
+	<script src="https://vjs.zencdn.net/4.12/video.js"></script>
+	<script>
+	(function() {
+		videojs('video_ellie').ready(function(){
+			var player = this;
+			var currentTime = 0;
+			player.player().playbackRate(2);
+
+			player.on("ended", function(){
+				player.currentTime(0).play();
+			})
+
+			player.currentTime(0).play();
+		})
+	})();
+	</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-61295784-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+  </body>
+</html>
